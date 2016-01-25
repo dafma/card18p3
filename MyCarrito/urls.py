@@ -36,6 +36,7 @@ urlpatterns = [
 	url(r'^logout/$', 'userprofiles.views.userLogOut', name="userLogOut"),
 	url(r'^search$', 'app.views.search'),
 	url(r'^sign/$', 'userprofiles.views.signDispatcher', name="sign"),
+	url(r'^login/$', 'userprofiles.views.registrarme', name="registrarme"),
 	url(r'^upload/(?P<path>.*)$', 'django.views.static.serve',
 					{'document_root':settings.MEDIA_ROOT}),
 ]

@@ -271,20 +271,20 @@ function removeAutofilled(){
 
 function geoInfoCallBack(data){
 	var info 	= data.query.results.Result,
-		city	= info.city,
-		county 	= info.county,
-		street	= info.street,
-		post	= info.postal;
+		//city	= info.city,
+		//county 	= info.county,
+		//street	= info.street,
+		//post	= info.postal;
 
-	$('#id_postal_code').attr('value', post).addClass('autofilled');
-	$('#id_city').attr('value', county).addClass('autofilled');
+	//$('#id_postal_code').attr('value', post).addClass('autofilled');
+	//$('#id_city').attr('value', county).addClass('autofilled');
 
-	if (positionCoords.accuracy < 60){
-		$('#id_street').attr('value', street).addClass('autofilled');
-	}
-	$('#id_postal_code').on('focus', removeAutofilled);
-	$('#id_city').on('focus', removeAutofilled);
-	$('#id_street').on('focus', removeAutofilled);
+	//if (positionCoords.accuracy < 60){
+		$//('#id_street').attr('value', street).addClass('autofilled');
+	//}
+	//$('#id_postal_code').on('focus', removeAutofilled);
+	//$('#id_city').on('focus', removeAutofilled);
+	//$('#id_street').on('focus', removeAutofilled);
 }
 
 setActive();

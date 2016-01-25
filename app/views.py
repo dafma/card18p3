@@ -81,9 +81,7 @@ def checkOut(request):
             page_class = 'checkout-page'
             page_title = "Order done!"
 
-            response = render(request, 'success.html', locals())
-
-            return response
+            return render(request, 'success.html', locals())
     else:
         form = OrderForm()
 
@@ -108,8 +106,6 @@ def product(request, category, p_id):
 
     if category == "books":
         products = Book.objects.all()
-
-
 
     product = products.get(pk=p_id)
     product.popularity += 1

@@ -17,19 +17,8 @@ class Book(models.Model):
 		return html
 
 class Order(models.Model):
-
-	PAYMENT_CHOICES = (	('paypal', 'paypal'),
-						('credit card', 'credit card'),
-						('bank transfer', 'bank transfer'),)
-
-
-	city = models.CharField(max_length=250)
 	first_name = models.CharField(max_length=250)
-	name = models.CharField(max_length=250)
 	order_date = models.DateTimeField(auto_now_add=True, verbose_name='date')
-	payment = models.CharField(choices=PAYMENT_CHOICES, max_length=200)
-	postal_code = models.IntegerField()
-	street = models.CharField(max_length=250)
 	total_amount = models.DecimalField(max_digits=10, decimal_places=2)
 	user = models.ForeignKey(User)
 

@@ -29,15 +29,11 @@ class BookInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
 
 	fieldsets = [
-		('Order info',	{	'fields': ['name', 'first_name',\
-						 	'total_amount', 'payment',]}),
-		('Address',	{'fields': ['street', 'postal_code', 'city']}),
-	]
+		('Order info',	{	'fields': [ 'first_name','total_amount', 'payment',]}),]
 	inlines = [ BookInline, ]
-	list_display = ('__str__', 'name', 'first_name',\
-					'order_date','address', 'total_amount', 'user')
-	list_filter = ('user', 'order_date', 'city')
-	search_fields = ('user__username', 'user__email', 'city')
+	list_display = ('__str__', 'first_name','order_date', 'total_amount', 'user')
+	list_filter = ('user', 'order_date',)
+	search_fields = ('user__username', 'user__email')
 
 
 

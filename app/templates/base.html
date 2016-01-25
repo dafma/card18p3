@@ -1,4 +1,4 @@
-
+{% load dajaxice_templatetags %}
 <!DOCTYPE html>
 <html lang='es'>
 <head>
@@ -8,21 +8,19 @@
     {% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%  static "css/normalizer.css" %}">
-
+    {% dajaxice_js_import %}
 </head>
 <body class="{{page_class}}">
 	<header class="row-fluid" id="main-nav">
 			<nav class="navbar" role="navigation">
-				<a href="/" class="brand">Things</a></li>
+				<a href="/" class="brand">Cosas</a></li>
 				<ul class="no-list-style">
 					<li id="home"> 
 						<a href="/">
 							<span class="icon-home"></span>
-							<span class="hide-mobile"> Home</span></a>
+							<span class="hide-mobile"> Inicio</span></a>
 					</li>
-					<li id="bikes"> <a href="/bikes">Bikes</a></li>
-					<li id="books"> <a href="/books">Books</a></li>
-					<li id="music"> <a href="/music">Music</a></li>
+					<li id="books"> <a href="/books">Libros</a></li>
 				</ul>
 				<ul class="nav-icons no-list-style">
 					<li id="search"> <a href="#"><span class="icon-search"></span></a></li>
@@ -38,10 +36,10 @@
 	</header>
 	<article id="cart-box" class="is_empty hide">
 		<div class="cart-buttons">
-			<a href="#" id="close-cart"><span class="icon-cart"></span> Close cart</a>
+			<a href="#" id="close-cart"><span class="icon-cart"></span> Cerrar carro</a>
 			<a href="/checkout" id="checkout"><span class="icon-checkmark"> </span> Checkout</a>
 		</div>
-		<p class="empty-flag"> Your cart is empty </p>
+		<p class="empty-flag"> Tu carro esta Vacio </p>
 		<div class="cart-product hide delete" id="">
 			<p class="quantity"></p>
 			<a class="title" href=""></a>
@@ -53,10 +51,7 @@
 		{% block content %}{% endblock %}
 	</section>
 	<footer>
-		<p> THIS IS NOT A REAL STORE. Trademarks and logos are property of its owners</p>
-		<a href="mailto:parejo.p@gmail.com"><span class="icon-pen"></span> Pablo Parejo Camacho </a>
-		<p class="copy"> Things 2014 </p>
-		<a id="admin" href="/admin"> <span class="icon-lock"> Admin </span></a>
+		<a href="mailto:parejo.p@gmail.com">Seader by Solidfounds</a>
 	</footer>
 	<script src='{% static "js/jquery.js" %}'></script>
 	<script src='{%  static "js/code.js" %}'>
